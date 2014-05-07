@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Item Name &nbsp &nbsp</td>
+			<td>Amount</td>
+		</tr>
+		<tr>
+	<% @expenses.each do |entry| %>
+	<td><%= entry.item %></td>
+	<td><%= entry.amount %></td>
+	<td><a href="/show/<%= entry.id %>">Details</a></td>
+	</tr>
+	<% end %>
+	
+	</table>
+	<br />
+	<br />
+	<h2>Your current total is: <%= @total %></h2>
+	<br />
+	<br />
+	<a href="/new"><h3>Create New Item</h3></a>
+
+</body>
+</html>
